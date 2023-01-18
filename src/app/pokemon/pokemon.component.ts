@@ -14,8 +14,8 @@ import { PokemonService } from './pokemon.service';
   encapsulation: ViewEncapsulation.None
 })
 export class PokemonComponent implements OnChanges {
-  @Input()
-  public name: string ='charizard';
+  @Input('pokemon')
+  public pokmemonName: string ='charizard';
 
   public pokemon!: Pokemon;
   public pokemonSubscription!: Subscription;
@@ -34,7 +34,7 @@ export class PokemonComponent implements OnChanges {
   ) { }
 
   async renderPokemon(){
-    const context = MS_POKEMON_API_CONTEXT.POKEMON + replacePath(MS_POKEMON_API_CONTEXT.POKEMON_NAME, this.name)
+    const context = MS_POKEMON_API_CONTEXT.POKEMON + replacePath(MS_POKEMON_API_CONTEXT.POKEMON_NAME, this.pokmemonName)
     const pokemon = await this.pokemonService.getPokemon(context).toPromise();
     if(!pokemon)throw new Error("pokmon is null");
     
