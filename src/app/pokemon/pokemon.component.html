@@ -1,0 +1,16 @@
+<article class="card text-white bg-dark mb-3 animate__animated animate__fadeIn" style="max-width: 18rem;" *ngIf="pokemon">
+  <img [src]="pokemon.sprites.other?.home?.front_default" class="card-img-top" alt="pokemon_img">
+  <div class="card-header text-center font-weight-bold">{{pokemon.name}}</div>
+  <div class="card-body">
+      <div class="row">
+          <ng-container *ngFor="let pokemonStat of pokemon.stats">
+              <div class="col-6">{{pokemonStatMap.get(pokemonStat.stat.name)}}</div>
+              <div class="col-6 text-right {{'pokemon-stat-'+ pokemonStat.stat.name}}">
+                  {{ pokemonStat.base_stat }}
+              </div>
+              <div class="w-100 mb-3"></div>
+          </ng-container>
+
+      </div>
+  </div>
+</article>

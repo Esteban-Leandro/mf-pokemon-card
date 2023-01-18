@@ -1,0 +1,25 @@
+@import "../../assets/bootstrap/css/bootstrap.min.css";
+@import "../../assets/animate.css/animate.css";
+
+.card{
+    box-shadow: 8px 8px 10px 0px #333333;
+}
+
+.pokemon-stat-hp{
+    color: #ff5959;
+}
+.pokemon-stat-attack{
+    color: #f5ac78
+}
+.pokemon-stat-defense{
+    color: #fae078;
+}
+.pokemon-stat-special-attack{
+    color: #9db7f5;
+}
+.pokemon-stat-special-defense{
+    color: #a7db8d;
+}
+.pokemon-stat-speed{
+    color: #fa92b2;
+}
